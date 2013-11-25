@@ -12,3 +12,7 @@ function phpserver() {
         php -S "${ip}:${port}"
 }
 
+function show_my_ip() {
+	dig +short myip.opendns.com @resolver1.opendns.com
+}
+
