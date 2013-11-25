@@ -1,0 +1,33 @@
+# Shamelessly inspired from https://github.com/gf3/dotfiles
+# Screenshot: http://i.imgur.com/s0Blh.png
+
+export TERM=xterm-256color
+
+tput sgr0
+COLOR_USER=$(tput setaf 5)
+COLOR_MACHINE=$(tput setaf 4)
+GREEN=$(tput setaf 2)
+PURPLE=$(tput setaf 1)
+WHITE=$(tput setaf 7)
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+export COLOR_USER
+export COLOR_MACHINE
+export GREEN
+export PURPLE
+export WHITE
+export BOLD
+export RESET
+
+function parse_git_dirty() {
+        [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+}
+
+function parse_git_branch() {
+        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+export PS1="\[${BOLD}${COLOR_USER}\]\u \[$WHITE\]at \[$COLOR_MACHINE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+export PS2="\[$COLOR_MACHINE\]→ \[$RESET\]"
+
