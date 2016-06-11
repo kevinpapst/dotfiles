@@ -10,9 +10,8 @@ and OS X beginner.
 
 ```bash
 git clone https://github.com/kevinpapst/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles/
-echo "source ~/.dotfiles/bash.sh" >> ~/.bash_profile
-source ~/.dotfiles/bash.sh
+echo "source ~/.dotfiles/base.sh" >> ~/.bash_profile
+source ~/.dotfiles/base.sh
 ```
 
 ### Obtrusive method
