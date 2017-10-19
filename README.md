@@ -26,7 +26,7 @@ cp ~/.dotfiles/* ~/
 ## Thanks ...
 
 * [Ingo Walz](https://github.com/iwalz/) for the idea to read more about public dotfiles
-* [http://dotfiles.github.io/](Dotfiles) for the great collection
+* [Dotfiles](http://dotfiles.github.io/) the unofficial guide to dotfiles on GitHub
 * [Kevin Elliott](https://github.com/kevinelliott/.dotfiles) for his repo
 * [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) for his repo
 * [tutsplus](http://net.tutsplus.com/tutorials/tools-and-tips/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles/)
