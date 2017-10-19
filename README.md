@@ -1,34 +1,26 @@
 dotfiles
 ========
 
-This is a very simple .dotfiles repo from a [developer](https://gist.github.com/kevinpapst/24e251a5bf3a01174a231e8eeb13d6cd) 
-and OS X beginner. 
+This is a very simple .dotfiles repo from a [PHP developer](https://gist.github.com/kevinpapst/24e251a5bf3a01174a231e8eeb13d6cd).
+ 
+You can use it by itself, but I use it primarly as a submodule of my [MacOS development setup](https://github.com/kevinpapst/mac-os-setup).
 
 ## Installation
 
-### Recommended for most users
+Attention: This will overwrite already existing .dotfiles in your home directory:
 
 ```bash
 git clone https://github.com/kevinpapst/dotfiles.git ~/.dotfiles
-echo "source ~/.dotfiles/base.sh" >> ~/.bash_profile
-source ~/.dotfiles/base.sh
+cp ~/.dotfiles/* ~/ 
+source ~/.dotfiles/.bash_profile
 ```
 
-### Obtrusive method
-
-Attention: This will overwrite already existing .dotfiles in your home directory!
-```bash
-git clone https://github.com/kevinpapst/dotfiles.git ~/dotfiles
-cd ~/dotfiles/
-chmod +x install.sh
-./install.sh
-```
-
-To update, change into your local `dotfiles` repository and then:
+To update, change into your local `.dotfiles` repository and then:
 
 ```bash
-cd ~/dotfiles/
-./install.sh --force
+cd ~/.dotfiles/
+git pull
+cp ~/.dotfiles/* ~/ 
 ```
 
 ## Thanks ...
