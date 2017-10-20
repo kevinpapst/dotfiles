@@ -98,15 +98,6 @@ function server() {
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
 
-# Compare original and gzipped file size
-function gz() {
-	local origsize=$(wc -c < "$1");
-	local gzipsize=$(gzip -c "$1" | wc -c);
-	local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
-	printf "orig: %d bytes\n" "$origsize";
-	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
-}
-
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
@@ -175,8 +166,7 @@ function s() {
 	fi;
 }
 
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
+# `v` with no arguments opens the current directory in Vim, otherwise opens the given location
 function v() {
 	if [ $# -eq 0 ]; then
 		vim .;
@@ -185,8 +175,7 @@ function v() {
 	fi;
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
+# `o` with no arguments opens the current directory, otherwise opens the given location
 function o() {
 	if [ $# -eq 0 ]; then
 		open .;
@@ -201,4 +190,9 @@ function o() {
 # small enough for one screen.
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+# `trash` moves a file to the MacOS trash
+function trash () {
+    command mv "$@" ~/.Trash ;
 }
