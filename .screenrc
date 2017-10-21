@@ -1,8 +1,6 @@
 # Screen settings
 # https://www.gnu.org/software/screen/manual/screen.html#Command-Summary
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Set the default character encoding to UTF-8
 defutf8 on
 

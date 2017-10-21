@@ -23,6 +23,11 @@ git pull
 cp ~/.dotfiles/* ~/ 
 ```
 
+## What you need to know
+
+- the directorx `zsh` is not existing in here, but zsh will look there for custom files
+
+
 ## Thanks ...
 
 * [Ingo Walz](https://github.com/iwalz/) for the idea to read more about public dotfiles
