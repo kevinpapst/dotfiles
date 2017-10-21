@@ -77,7 +77,6 @@ function escape() {
 	printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u);
 	# print a newline unless we’re piping the output to another program
 	if [ -t 1 ]; then
-		echo ""; # newline
+		echo "";
 	fi;
 }
-

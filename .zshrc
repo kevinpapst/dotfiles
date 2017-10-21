@@ -24,9 +24,9 @@ for brew_plugin in $BREW_PLUGINS; do
         source $BREW_PREFIX/share/$brew_plugin/$brew_plugin.zsh
     fi
 done
-unset $brew_plugin
-unset $BREW_PLUGINS
-unset $BREW_PREFIX
+unset brew_plugin
+unset BREW_PLUGINS
+unset BREW_PREFIX
 
 # some more options you can fiddle around with:
 # CASE_SENSITIVE="true"
