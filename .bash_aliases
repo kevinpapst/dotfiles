@@ -3,10 +3,11 @@
 # Shortcuts
 alias v="vim"
 alias l="ls -lFGh"
-alias ll='ls -lsaiGh'
-#alias ll='ls -FGlAhp'
+alias ll='ls -FGlAhp'
 alias la="ls -laFG"
 alias lsd='ls -lFG | grep "^d"'
+
+alias edit=$EDITOR
 
 # Always use color output for `ls`
 alias ls="command ls -G"
@@ -15,42 +16,49 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 # flush the macos dns cache
 alias dns-fluh="sudo killall -HUP mDNSResponder"
 
-# XCode
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
+# improve default grep command
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 
-# Utils
-alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-alias pngcrush="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/pngcrush"
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # pipe my public ssh key to the clipboard
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
+# Easier directory traversal/navigation
+alias cd..='cd ../'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+alias f='open -a Finder ./'
+
+# display all executable paths
+alias path='echo -e ${PATH//:/\\n}'
+
 # ---------------------------------------------------------------------------------------------------
 # TODO test and integrate the following aliases
 # ---------------------------------------------------------------------------------------------------
+
 #alias cp='cp -iv'                           # Preferred 'cp' implementation
 #alias mv='mv -iv'                           # Preferred 'mv' implementation
 #alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 #alias less='less -FSRXc'                    # Preferred 'less' implementation
-#alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
-#alias ..='cd ../'                           # Go back 1 directory level
-#alias ...='cd ../../'                       # Go back 2 directory levels
-#alias .3='cd ../../../'                     # Go back 3 directory levels
-#alias .4='cd ../../../../'                  # Go back 4 directory levels
-#alias .5='cd ../../../../../'               # Go back 5 directory levels
-#alias .6='cd ../../../../../../'            # Go back 6 directory levels
-#alias edit='subl'                           # edit:         Opens any file in sublime editor
-#alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
-#alias ~="cd ~"                              # ~:            Go Home
-#alias c='clear'                             # c:            Clear terminal display
-#alias which='type -all'                     # which:        Find executables
-#alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
-#alias show_options='shopt'                  # Show_options: display bash options settings
-#alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
-#alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
-#alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
-#
-## these are no function but will likely be looked up in bash_aliases
-#cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
-#ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
+#alias which='type -all'                     # find executables
+#alias DT='tee ~/Desktop/terminalOut.txt'    # Pipe content to file on MacOS Desktop
+
+# ---------------------------------------------------------------------------------------------------
+# https://xkcd.com/530/ - those are documented here, as long as I don't have a better place for them
+# ---------------------------------------------------------------------------------------------------
+
+# XCode
+#alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+#alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
+
+# remove broken or duplicate entries from the "open with" context menu in finder
+#alias fixopenwith="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;"
+
+# Utils
+#alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+#alias pngcrush="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/pngcrush"
