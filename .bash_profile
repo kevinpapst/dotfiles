@@ -19,6 +19,9 @@ if [ -d /usr/local/lib/python2.7/ ]; then
     export PYTHONPATH=/usr/local/lib/python2.7/site-packages/
 fi
 
+# docker won't start without setting the environment information for every new shell
+eval $(docker-machine env)
+
 # You may need to adjust your language environment
 # export LC_ALL="de_DE.UTF-8"
 export LANG=de_DE.UTF-8
