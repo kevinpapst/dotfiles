@@ -9,9 +9,11 @@ export EDITOR='vim'
 
 # make sure casks get installed in the right directory
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# ... and that I won't be tracked by Google, see https://docs.brew.sh/Analytics
+export HOMEBREW_NO_ANALYTICS=1
 
 # some very useful path assignments
-export PATH=/usr/local/bin:$HOME/bin:$HOME/dotfiles/bin:/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/dotfiles/bin:/usr/local/mysql/bin:$PATH
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 # TODO this should not point to a static location
@@ -20,7 +22,9 @@ if [ -d /usr/local/lib/python2.7/ ]; then
 fi
 
 # docker won't start without setting the environment information for every new shell
-eval $(docker-machine env)
+if [ `docker-machine status` = "Running" ]; then
+    eval $(docker-machine env)
+fi
 
 # You may need to adjust your language environment
 # export LC_ALL="de_DE.UTF-8"
