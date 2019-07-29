@@ -49,6 +49,11 @@ done
 unset dotfile;
 unset DOTFILES;
 
+# https://jekyllrb.com/docs/installation/macos/
+# https://github.com/jekyll/jekyll/issues/7274#issuecomment-424401726
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+
 
 ##################################################################################################
 # I keep the following stuff for documentation purpose and further tweaking                      #
