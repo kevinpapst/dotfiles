@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-#
 # I have to admit:
-# The function were written by talented devs from various .dotfiles packages where the original author is unknown
-#
+# These functions were written by talented devs from various .dotfiles packages
+# original authors are unknown :-(
 
 function f()            { find . -iname "*$1*" ${@:2} }
 function r()            { grep "$1" ${@:2} -R . }
