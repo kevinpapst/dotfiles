@@ -13,17 +13,17 @@ This will overwrite already existing .dotfiles in your home directory.
 And now that you have been warned: 
 
 ```bash
-git clone https://github.com/kevinpapst/dotfiles.git ~/.dotfiles
-cp ~/.dotfiles/* ~/ 
-source ~/.dotfiles/.bash_profile
+git clone https://github.com/kevinpapst/dotfiles.git
+cd dotfiles
+cp * ~/ 
+source ~/.bash_profile
 ```
 
-To update, change into your local `.dotfiles` repository and then:
+To update, change into your local `dotfiles` repository and then:
 
 ```bash
-cd ~/.dotfiles/
 git pull
-cp ~/.dotfiles/* ~/ 
+cp * ~/ 
 ```
 
 ## What you need to know
