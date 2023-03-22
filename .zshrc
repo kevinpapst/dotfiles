@@ -47,5 +47,11 @@ HIST_STAMPS="dd.mm.yyyy"
 # sure that ~/bash_profile is compatible with zsh
 source ~/.bash_profile
 
+# AUTOCOMPLETE FOR SSH FROM ~./ssh/config - @see https://www.codyhiar.com/blog/zsh-autocomplete-with-ssh-config-file/
+zstyle ':completion:*:(scp|rsync):*' tag-order ' hosts:-ipaddr:ip\ address hosts:-host:host files'
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+autoload -Uz compinit && compinit -i
+
 # load the oh-my-zsh environment
 source $ZSH/oh-my-zsh.sh
