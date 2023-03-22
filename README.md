@@ -3,11 +3,14 @@ dotfiles
 
 This is a very simple .dotfiles repo from a [PHP developer](https://gist.github.com/kevinpapst/24e251a5bf3a01174a231e8eeb13d6cd).
  
-You can use it by itself, but I use it primarly as a submodule of my [MacOS development setup](https://github.com/kevinpapst/mac-os-setup).
+You can use it by itself, but I use it primarily as a submodule of my [MacOS development setup](https://github.com/kevinpapst/mac-os-setup).
 
 ## Installation
 
-Attention: This will overwrite already existing .dotfiles in your home directory:
+**Attention:** Better safe than sorry!   
+This will overwrite already existing .dotfiles in your home directory.
+
+And now that you have been warned: 
 
 ```bash
 git clone https://github.com/kevinpapst/dotfiles.git ~/.dotfiles
